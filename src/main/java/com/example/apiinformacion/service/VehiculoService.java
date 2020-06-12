@@ -11,7 +11,7 @@ public interface VehiculoService {
 
     void insert(Vehiculo vehiculo);
 
-    void update(Vehiculo vehiculo);
+    void update(Vehiculo vehiculo, String placa);
 
     void delete(String placa);
 

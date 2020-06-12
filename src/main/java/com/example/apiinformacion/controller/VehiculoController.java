@@ -11,19 +11,18 @@ import java.util.List;
 @RequestMapping("/control-vehiculo")
 public class VehiculoController {
 
-
-    /**Inyeccion de dependecias*/
-    @Autowired
-    private VehiculoService vehiculoService;
-
     /**Tansacciones*/
 
     /**+ GetMapping Obtener recuersos
-     * + PostMapping para insertar
+     * + PostMapping para insertar o crear recursos
      * + PutMapping
      * + RequestBody en la peticion de la peticion Http vamos a enviar un objeto
      * + PathVariable enviar variables por el protocolo Http
      * */
+
+    /**Inyeccion de dependecias*/
+    @Autowired
+    private VehiculoService vehiculoService;
 
     /**Buscar vehiculos por la placa*/
     @GetMapping("/{placa}/vehiculo")
@@ -40,8 +39,7 @@ public class VehiculoController {
     /**Actualizar vehiculo y su placa*/
     @PutMapping("/{placa}/vehiculo")
     public void actualizar(@RequestBody Vehiculo vehiculo, @PathVariable String placa){
-        vehiculo.setPlaca(placa);
-        vehiculoService.update(vehiculo);
+        vehiculoService.update(vehiculo, placa);
     }
 
     /**Eliminar  un vehiculo por la placa*/
