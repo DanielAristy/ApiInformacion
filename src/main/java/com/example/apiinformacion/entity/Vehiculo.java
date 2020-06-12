@@ -24,4 +24,5 @@ public class Vehiculo {
 
     @Column(name = "color")
     private String color;
+
 }
